@@ -24,7 +24,7 @@ hide:
   <code>fmt::format</code></a> <b>prevent buffer overflow errors</b> via
   automatic memory management.
 </p>
-<a href="api#compile-time-format-string-checks">→ Learn more</a>
+<a href="api#compile-time-checks">→ Learn more</a>
 </div>
 
 <div class="feature">
@@ -84,9 +84,9 @@ hide:
 <h2>Fast compilation</h2>
 <p>
   The library makes extensive use of <b>type erasure</b> to achieve fast
-  compilation. <code>fmt/base.h</code> provides a subset
-  of the API with <b>minimal include dependencies</b> and enough functionality
-  to replace all uses of <code>*printf</code>.
+  compilation. <code>fmt/base.h</code> provides a subset of the API with
+  <b>minimal include dependencies</b> and enough functionality to replace
+  all uses of <code>*printf</code>.
 </p>
 <p>
   Code using {fmt} is usually several times faster to compile than the
@@ -103,8 +103,8 @@ hide:
 <p>
   Type erasure is also used to prevent template bloat, resulting in <b>compact
   per-call binary code</b>. For example, a call to <code>fmt::print</code> with
-  a single argument is fewer than <a href="https://godbolt.org/g/TZU4KF">ten
-  x86-64 instructions</a>, comparable to <code>printf</code> despite adding
+  a single argument is just <a href="https://godbolt.org/g/TZU4KF">a few
+  instructions</a>, comparable to <code>printf</code> despite adding
   runtime safety, and much smaller than the equivalent iostreams code.
 </p>
 <p>
@@ -122,8 +122,8 @@ hide:
 </p>
 <p>
   The library is highly portable and requires only a minimal <b>subset of
-  C++11</b> features which are available in GCC 4.8, Clang 3.4, MSVC 19.0
-  (2015) and later. Newer compiler and standard library features are used
+  C++11</b> features which are available in GCC 4.9, Clang 3.6, MSVC 19.10
+  (2017) and later. Newer compiler and standard library features are used
   if available, and enable additional functionality.
 </p>
 <p>
